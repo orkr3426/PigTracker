@@ -1,0 +1,45 @@
+<!-- SEARCH: <input type="text" [(ngModel)]="query"> -->
+<app-map-screen></app-map-screen>
+<body>
+    <div id="addbtn">
+        <a href="/add">ADD NEW REPORT</a>
+    </div>
+    <br>
+    <span *ngIf="nameSort==1; then pos else neg"></span>
+    <ng-template #pos>
+        <button (click)="sortByReportedby()">Sort by Name &#916;</button>
+    </ng-template>
+    <ng-template #neg>
+        <button (click)="sortByReportedby()">Sort by Name &#8711;</button>
+    </ng-template>
+    
+    <span *ngIf="locationSort==1; then up else down"></span>
+    <ng-template #up>
+        <button (click)="sortByLocation()">Sort by Location &#916;</button>
+    </ng-template>
+    <ng-template #down>
+        <button (click)="sortByLocation()">Sort by Location &#8711;</button>
+    </ng-template>
+    
+    <span *ngIf="timeSort==1; then sang else ha"></span>
+    <ng-template #sang>
+        <button (click)="sortByTimereported()">Sort by Time Reported &#916;</button>
+    </ng-template>
+    <ng-template #ha>
+        <button (click)="sortByTimereported()">Sort by Time Reported &#8711;</button>
+    </ng-template>
+    
+    <div id="reports">
+        <app-report
+            *ngFor="let r of reports"
+            [report]="r"
+            (delete) = "onReportDelete($event)"
+            (change) = "onReportChangeStatus($event)"
+            (moreInfo) = "onReportMoreInfo($event)"
+        ></app-report>
+    </div>
+</body>
+
+
+
+

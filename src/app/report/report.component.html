@@ -1,0 +1,46 @@
+<body>
+  <div class="inner">
+    <h3 style="color:#dabab6; text-decoration:underline">Report of Pig #{{report.pid}}: </h3>
+    <strong>Reported by: </strong><span [textContent]="report.reporterName"></span> <br>
+    <strong>Time reported: </strong>{{ report.timeReported | date:'yyyy, MMM d, hh:mm:ss' }} <br>
+    <strong>Location: </strong>{{ report.locationName }}; <br>
+    <strong>Status: </strong>
+    <span *ngIf="report.status; then ins else notins"></span>
+    <ng-template #ins> &#x2713; <span style="color:rgb(28, 117, 234)">Retrieved</span> </ng-template>
+    <ng-template #notins>&#10149; <span style="color: rgb(222, 189, 41)">Ready to pick up</span> </ng-template>
+    <br>
+    <span *ngIf="report.moreInfoSwitch; then on else off"></span>
+    <ng-template #on>
+      <strong>Reporter's Phone #: </strong> {{ report.phone }} <br>
+      <strong> Pig Breed: </strong> {{ report.breed }} <br>
+      <strong>Pig ID (pid): </strong> {{ report.pid }} <br>
+      <strong>Latitude: </strong> {{ report.latitude }} <br>
+      <strong>Longitude: </strong> {{ report.longitude }} <br>
+      <strong>Extra Note: </strong>{{ report.extraNote }} <br>
+     
+    </ng-template>
+    <ng-template #off></ng-template>
+  </div>
+  
+
+    <div class="buttons">
+      <button
+        class="switchbtn"
+        (click)="onChangeStatus($event, report.pid)"  
+      >Switch Status</button> <br>
+      <button 
+        class="delbtn"
+        id="delete"
+        (click)="onDelete($event,report.pid)"
+        >Delete</button> <br>
+      <button class="btn"
+        (click)="onMoreInfo($event,report.pid)"
+        >More Info</button>
+    </div>
+</body>
+    
+  
+      
+  
+  
+  

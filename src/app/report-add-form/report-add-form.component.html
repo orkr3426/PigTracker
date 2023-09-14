@@ -1,0 +1,48 @@
+
+
+<form 
+    [formGroup]="form"
+    (ngSubmit)="onSubmit(form.value)"
+>   
+    <h2 id="title">Create New Report</h2>
+    <p>All the inputs should not be empty</p>
+    <br>
+    <br>
+    <h3>   
+        <u>Reporter's Info</u>
+    </h3>
+    <input name="reporterName" type="text" formControlName="reporterName" placeholder="Enter your name"> 
+    <input type="number" name="phone" placeholder="Enter your phone number" formControlName="phone">
+    <br>
+
+    <h3>
+        <u>Pig Info</u> 
+    </h3>
+    <input type="text" name="breed" placeholder="Enter the pig's breed ... ex) Pot-Bellied" formControlName="breed">
+    <input type="number" name="pid" placeholder="Enter the pig's id ... ex) 101" formControlName="pid">
+    <br>
+
+
+    <h3>    
+        <u>Location</u> 
+    </h3>
+    Name of the location
+    <select name="location-name" formControlName="locationName">
+        <option [value]="location" *ngFor="let location of locations">{{location}}</option>
+    </select>
+    <input type="text" formControlName="locationName" placeholder="If your location is not in the options, Enter a new location" >
+    
+    <input type="number" name="latitude" placeholder="Enter the latitude ... ex) 49.2820" formControlName="latitude">
+    <input type="number" name="longitude" placeholder="Enter the longitude ... ex) -123.1171" formControlName="longitude">
+    
+    <br>
+    <h3>
+        <u>Extra Note</u>
+    </h3>
+    <input type="text" name="extra-note" formControlName="extraNote" placeholder="Please add some detail">
+    
+    <br>
+    <button id="btn" [disabled]="!form.valid">SAVE</button>
+    <a href="">Back to the main page</a>
+</form>
+

@@ -1,0 +1,12 @@
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-repeat: no-repeat;
+    font-size: larger;
+}
+
+body {
+    background: url("../pigs.jpg");
+}

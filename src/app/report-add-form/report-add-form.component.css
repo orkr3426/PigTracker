@@ -1,0 +1,55 @@
+#btn {
+    background-color: #dabab6;
+    border: 2px solid black;
+    color: black;
+    border-radius: 10px;
+    font-size: medium;
+    padding: 5px 15px;
+
+}
+
+#title, p {
+    color: white;
+    padding: 0px;
+    margin: 0px;
+}
+
+input, select {
+    background-color: #dabab6;
+    border: none;
+    padding: 10px 2px;
+    margin: 10px;
+    width: 90%;
+    border-bottom: 2px solid black;
+}
+
+form {
+    background-color: #dabab6;
+    border: 10px solid rgba(54, 54, 54, 0.578);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: large;
+    padding: 5% 20%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: white;
+    margin-top: 10px;
+}
+
+a:hover {
+    color: black;
+}
+
+input:hover {
+    border-color: white;
+    transition: 0.5s;
+}
+
+#btn:hover {
+    color: white;
+    border-color: white;
+}
