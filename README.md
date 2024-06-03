@@ -1,6 +1,14 @@
-# Leaflet
+# CMPT 272 Web I - Client-side development
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
+Project - Pig Tracker
+This app will allow a user to report a missing pig with detail. These informations are then stored into a local storage so they won't be lost. 
+Locations will be automatically pinned into our map so that the owner can spot it easily. Both users and the owner can update the status of a missing pig.
+
+
+## Framework used
+Leaflet: This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
+Angular
+
 
 ## Development server
 
